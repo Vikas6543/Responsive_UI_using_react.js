@@ -5,6 +5,9 @@ const initialState = {
   modal: {
     isOpen: false,
   },
+  menu: {
+    isMenuOpen: false,
+  },
 };
 
 export const modalReducer = (state = initialState, action) => {
@@ -24,7 +27,7 @@ export const cardReducer = (state = initialState, action) => {
     case SET_CARD_TYPE:
       return {
         ...state,
-        card: action.payload,
+        card: [...state.card, action.payload],
       };
     default:
       return state;

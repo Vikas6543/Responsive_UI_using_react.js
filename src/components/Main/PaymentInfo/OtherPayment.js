@@ -1,5 +1,6 @@
 import React from 'react';
 import visa from '../../../assets/visa.png';
+import master from '../../../assets/master.png';
 import { useSelector } from 'react-redux';
 
 const OtherPayment = () => {
@@ -12,42 +13,56 @@ const OtherPayment = () => {
           Other Payment Method
         </div>
       </section>
-      {result.card.length > 0 &&
-        result.card.map((item, index) => (
-          <section className='deafultPayment_card p-2 rounded w-60 my-4'>
-            <div className='border-b pb-1'>
-              <img src={visa} alt='visa' />
-            </div>
+      <div className='grid grid-cols-12'>
+        {result.card.length > 0 &&
+          result.card.map((item, index) => (
+            <section className='deafultPayment_card p-2 rounded w-60 my-4 col-span-12 md:col-span-6'>
+              <div className='border-b pb-1'>
+                {item.cardType === 'visa' ? (
+                  <img src={visa} alt='visa' width='30' className='mr-2' />
+                ) : (
+                  <img src={master} alt='master' width='30' className='mr-2' />
+                )}
+              </div>
 
-            <div className='my-3 text-xs border-b pb-3'>
-              <div className='flex'>
-                <div className='w-4/6'>Card Type</div>
-                <div>{item.cardType}</div>
+              <div className='my-3 text-xs border-b pb-3'>
+                <div className='flex'>
+                  <div className='w-4/6'>Card Type</div>
+                  <div>{item.cardType}</div>
+                </div>
+                <div className='flex my-1'>
+                  <div className='w-4/6'>Card Number</div>
+                  <div>{item.cardNumber}</div>
+                </div>
+                <div className='flex'>
+                  <div className='w-4/6'>Name on Card</div>
+                  <div>{item.firstName}</div>
+                </div>
+                <div className='flex mt-1'>
+                  <div className='w-4/6'>Expiration Date</div>
+                  <div>{item.year}</div>
+                </div>
               </div>
-              <div className='flex my-1'>
-                <div className='w-4/6'>Card Number</div>
-                <div>{item.cardNumber}</div>
-              </div>
-              <div className='flex'>
-                <div className='w-4/6'>Name on Card</div>
-                <div>{item.firstName}</div>
-              </div>
-              <div className='flex mt-1'>
-                <div className='w-4/6'>Expiration Date</div>
-                <div>{item.year}</div>
-              </div>
-            </div>
 
-            <div className='flex items-center justify-between'>
-              <div>
-                <i className='fa-solid fa-circle-check'></i> Default
+              <div className='flex items-center justify-between'>
+                <div>
+                  {item.makeDefaultCard ? (
+                    <div>
+                      <i class='fa-solid fa-square-check'></i> Default
+                    </div>
+                  ) : (
+                    <div>
+                      <i class='fa-regular fa-square-check'></i> Default
+                    </div>
+                  )}
+                </div>
+                <div className='text-xs'>
+                  <p>Edit | Remove</p>
+                </div>
               </div>
-              <div className='text-xs'>
-                <p>Edit | Remove</p>
-              </div>
-            </div>
-          </section>
-        ))}
+            </section>
+          ))}
+      </div>
     </div>
   );
 };

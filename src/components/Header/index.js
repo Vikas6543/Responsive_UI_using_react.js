@@ -4,14 +4,24 @@ import truck from '../../assets/truck.png';
 import cart from '../../assets/cart.png';
 
 const Header = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const openMenuHandler = () => {
+    setIsOpen(true);
+  };
+
+  const closeMenuHandler = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <section className='flex justify-around header-wrapper'>
-        <div className='hidden sm:block'>
+        <div>
           <i className='fa-solid fa-circle-check'></i> Free shipping for orders
           above $150
         </div>
-        <div>
+        <div className='hidden sm:block'>
           <i className='fa-solid fa-circle-check'></i> 2 day Delivery
         </div>
         <div>
@@ -19,11 +29,49 @@ const Header = () => {
         </div>
       </section>
 
-      <section className='text-sm flex my-6 items-center sm:w-9/12 sm:mx-auto justify-around'>
-        <div className='sm:hidden cursor-pointer'>
-          <i class='fa-solid fa-bars text-xl'></i>
+      {isOpen && (
+        <div className='menu_wrapper w-60'>
+          <button onClick={closeMenuHandler} className='absolute top-1 right-2'>
+            <i className='fa-solid fa-xmark text-3xl text-white'></i>
+          </button>
+
+          <div className='menu_content mt-14'>
+            <section className='pl-6'>
+              <p>My Account</p>
+              <p>My Orders</p>
+              <p>My Claims</p>
+              <p>My Favorites</p>
+              <p>My Shopping Lists</p>
+            </section>
+
+            <section className='sidebar_payment my-4 pl-6 py-5'>
+              <p>Address Book</p>
+              <p>Account Information</p>
+              <p>Payment Information</p>
+            </section>
+
+            <section className='pl-6'>
+              <p>Company Profile</p>
+              <p>Company Structure</p>
+              <p>Company Users</p>
+              <p>Roles and Permissions</p>
+            </section>
+
+            <section className='pl-6 py-2 sidebar_email mt-4'>
+              <p>Email Preferences</p>
+              <p>Catalog</p>
+            </section>
+          </div>
         </div>
-        <div className='font-bold sm:mr-14'>Logo</div>
+      )}
+
+      <section className='text-sm flex my-6 items-center sm:w-8/12 sm:mx-auto justify-around'>
+        <button onClick={openMenuHandler} className='sm:hidden cursor-pointer'>
+          <i class='fa-solid fa-bars text-xl'></i>
+        </button>
+        <div className='font-bold sm:mr-14'>
+          <i class='fa-solid fa-crown text-lg'></i>
+        </div>
         <div className='flex hidden sm:flex'>
           <input
             className='appearance-none border rounded-xs py-2 leading-tight focus:outline-none focus:shadow-outline w-96 pl-2 text-xs'

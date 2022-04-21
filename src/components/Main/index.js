@@ -5,7 +5,7 @@ import PaymentInfo from './PaymentInfo';
 const Main = () => {
   return (
     <div className='sm:w-8/12 sm:mx-auto text-xs'>
-      <div className='sm:hidden py-4 mx-16 justify-around flex items-center bg-gray-200'>
+      <div className='sm:hidden py-4 mx-16 mt-10 justify-around flex items-center bg-gray-200'>
         <div className='font-semibold text-lg'>Payment Information</div>
         <div className='fa-solid fa-bars text-xl cursor-pointer'></div>
       </div>
@@ -38,8 +38,6 @@ const Main = () => {
             aria-labelledby='modal-headline'
           >
             {/* main-content */}
-            <div>hello</div>
-
             <div className='bg-gray-200 px-4 py-3 text-right'>
               <button
                 type='button'

@@ -28,7 +28,7 @@ const Footer = () => {
         <section className='fotter_section_4 md:col-span-3 col-span-6'>
           <h6 className='font-bold text-white pb-1'>SIGN UP</h6>
           <p>
-            Br the first to here about promotions, new products, trends and more
+            Be the first to here about promotions, new products, trends and more
           </p>
         </section>
       </div>
