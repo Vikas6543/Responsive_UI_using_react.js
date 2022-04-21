@@ -1,10 +1,10 @@
 # install project
 
-$ git clone https://github.com/hasankemaldemirci/react-crud-app.git
+$ git clone https://github.com/Vikas6543/assignment
 
 # open app directory
 
-$ cd react-crud-app
+$ cd MCFADYEN
 
 # install dependencies
 
