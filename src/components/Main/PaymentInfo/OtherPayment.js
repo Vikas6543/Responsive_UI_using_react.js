@@ -4,7 +4,12 @@ import master from '../../../assets/master.png';
 import { useSelector } from 'react-redux';
 
 const OtherPayment = () => {
+  const [card, setCard] = React.useState([]);
   const result = useSelector((state) => state.card);
+
+  React.useEffect(() => {
+    setCard(result.card);
+  }, [result]);
 
   return (
     <div className='mt-12 ml-8 sm:ml-0'>
@@ -14,9 +19,12 @@ const OtherPayment = () => {
         </div>
       </section>
       <div className='grid grid-cols-12'>
-        {result.card.length > 0 &&
-          result.card.map((item, index) => (
-            <section className='deafultPayment_card p-2 rounded w-60 my-4 col-span-12 md:col-span-6'>
+        {card.length > 0 &&
+          card.map((item, index) => (
+            <section
+              key={index}
+              className='deafultPayment_card p-2 rounded w-60 my-4 col-span-12 md:col-span-6'
+            >
               <div className='border-b pb-1'>
                 {item.cardType === 'visa' ? (
                   <img src={visa} alt='visa' width='30' className='mr-2' />

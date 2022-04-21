@@ -30,6 +30,7 @@ export const cardReducer = (state = initialState, action) => {
         card: [...state.card, action.payload],
       };
     default:
+      console.log(state);
       return state;
   }
 };

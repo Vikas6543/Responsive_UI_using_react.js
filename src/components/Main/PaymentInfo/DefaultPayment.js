@@ -1,7 +1,7 @@
 import React from 'react';
 import visa from '../../../assets/visa.png';
 import Modal from './Modal';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { modalAction } from '../../redux/action';
 
 const DefaultPayment = () => {
@@ -29,7 +29,7 @@ const DefaultPayment = () => {
           </div>
         </section>
 
-        <section className='deafultPayment_card p-2 rounded w-60 sm:mt-6 mt-10 ml-8 sm:ml-0'>
+        <section className='deafultPayment_card p-2 rounded w-60 sm:mt-6 my-10 ml-8 sm:ml-0'>
           <div className='border-b pb-1'>
             <img src={visa} alt='visa' />
           </div>

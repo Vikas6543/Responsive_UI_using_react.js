@@ -23,17 +23,15 @@ const Modal = () => {
 
   const saveModal = (e) => {
     e.preventDefault();
-    const card = [
-      {
-        firstName,
-        lastName,
-        cardNumber,
-        month,
-        year,
-        cardType,
-        makeDefaultCard,
-      },
-    ];
+    const card = {
+      firstName,
+      lastName,
+      cardNumber,
+      month,
+      year,
+      cardType,
+      makeDefaultCard,
+    };
     dispatch(cardAction(card));
     dispatch(modalAction(false));
   };
