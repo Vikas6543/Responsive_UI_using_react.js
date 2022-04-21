@@ -30,6 +30,26 @@ const Footer = () => {
           <p>
             Be the first to here about promotions, new products, trends and more
           </p>
+          <div className='flex mt-2'>
+            <input
+              className='appearance-none border rounded-xs py-1 leading-tight focus:outline-none focus:shadow-outline w-96 pl-2 text-xs'
+              type='text'
+              placeholder='Email Address'
+            />
+            <div className='subscribe-btn'>
+              <p className='text-black font-semibold px-4 py-1'>Subscribe</p>
+            </div>
+          </div>
+
+          <div className='fotter_icons mt-3'>
+            <p className='text-white text-sm '>Follow us on</p>
+            <section className='text-white mt-1 text-xl'>
+              <i class='fa-brands fa-facebook-square'></i>
+              <i class='fa-brands fa-pinterest-square mx-2'></i>
+              <i class='fa-brands fa-linkedin'></i>
+              <i class='fa-brands fa-instagram ml-2'></i>
+            </section>
+          </div>
         </section>
       </div>
     </div>

@@ -58,6 +58,12 @@ html, body {
   cursor: pointer;
 }
 
+.subscribe-btn {
+  background-color: rgb(249, 253, 2);
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .header_items_wrapper {
   border-top: 1px solid var(--light-pink);
   border-bottom: 1px solid var(--light-pink);
@@ -147,6 +153,10 @@ html, body {
   color: rgb(207, 204, 204);
   font-size: 12px;
   padding: 1px 0;
+}
+
+.fotter_icons > section > i {
+  color: white;
 }
 
 .modal_wrapper {
