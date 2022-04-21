@@ -1,0 +1,162 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--brown);
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.3px;
+  word-spacing: 1.5px;
+}
+
+html, body {
+  height: 100vh;
+  width: 100%;
+}
+
+:root {
+  --brown: #63544F;
+  --light-pink: #C8B9AB;
+  --light-black: #4B4B4B;
+  --blue: #2D5566;
+}
+
+/* Header Styles */
+.header-wrapper {
+  background-color: #EDE939;
+  padding: 3px 0;
+  font-size: 13px;
+}
+
+
+.search-btn {
+  background-color: var(--blue);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header_items_wrapper {
+  border-top: 1px solid var(--light-pink);
+  border-bottom: 1px solid var(--light-pink);
+  padding-left: 170px;
+}
+
+/* Main Content Styles */
+.sidebar-wrapper {
+  background-color: #F0F0F0;
+}
+
+.sidebar-wrapper > section >  p {
+  padding: 5px 0;
+}
+
+.sidebar_payment {
+  border-top: 1px solid var(--light-pink);
+  border-bottom: 1px solid var(--light-pink);
+}
+
+.sidebar_email {
+  border-top: 1px solid var(--light-pink);
+}
+
+.deafultPayment_title, .otherPayment_title {
+  border-bottom: 1px solid var(--light-pink);
+}
+
+.deafultPayment_title_text {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  .deafultPayment_title {
+    border-bottom: none;
+  }
+}
+
+.add_card_btn {
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+  padding: 8px 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .add_card_btn {
+    padding: 6px 10px;
+  }
+}
+
+.deafultPayment_card {
+  border: 2px solid #2D5566
+}
+
+
+/* fav section style */
+.fav_wrapper {
+  border-bottom: 1px solid var(--light-pink);
+}
+
+.fav_content {
+  font-size: 10px;
+}
+
+/* fotter section */
+.fotter_wrapper {
+  background-color: var(--brown);
+}
+
+.fotter_section_1 > p {
+  color: rgb(207, 204, 204);
+  font-size: 12px;
+  padding: 1px 0;
+}
+.fotter_section_2 > p {
+  color: rgb(207, 204, 204);
+  font-size: 12px;
+  padding: 1px 0;
+}
+.fotter_section_3 > p {
+  color: rgb(207, 204, 204);
+  font-size: 12px;
+  padding: 1px 0;
+}
+.fotter_section_4 > p {
+  color: rgb(207, 204, 204);
+  font-size: 12px;
+  padding: 1px 0;
+}
+
+.modal_wrapper {
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10
+}
+
+.modal_card {
+  width: 600px;
+}
+
+@media screen and (max-width: 700px) {
+  .modal_card {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modal_card {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .modal_card {
+    width: 250px;
+  }
+}
+
+
+.save_card_btn {
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+}
