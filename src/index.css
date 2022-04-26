@@ -24,7 +24,19 @@ html, body {
 
 /* Menu Styles */
 
-.menu_wrapper {
+.menu_hide {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  opacity: 0.9;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_show {
   position: fixed;
   top: 0;
   left: 0;
@@ -33,6 +45,7 @@ html, body {
   z-index: 1;
   transition: all 0.5s ease-in-out;
   opacity: 0.9;
+  transition: all 0.5s ease-in-out;
 }
 
 .menu_content > section > p {

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import user from '../../assets/user.png';
 import truck from '../../assets/truck.png';
 import cart from '../../assets/cart.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const ref = useRef(null);
 
   const openMenuHandler = () => {
     setIsOpen(true);
@@ -13,6 +15,18 @@ const Header = () => {
   const closeMenuHandler = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -29,41 +43,39 @@ const Header = () => {
         </div>
       </section>
 
-      {isOpen && (
-        <div className='menu_wrapper w-60'>
-          <button onClick={closeMenuHandler} className='absolute top-1 right-2'>
-            <i className='fa-solid fa-xmark text-3xl text-white'></i>
-          </button>
+      <div ref={ref} className={isOpen ? 'menu_show w-60' : 'menu_hide'}>
+        <button onClick={closeMenuHandler} className='absolute top-1 right-2'>
+          <i className='fa-solid fa-xmark text-3xl text-white'></i>
+        </button>
 
-          <div className='menu_content mt-14'>
-            <section className='pl-6'>
-              <p>My Account</p>
-              <p>My Orders</p>
-              <p>My Claims</p>
-              <p>My Favorites</p>
-              <p>My Shopping Lists</p>
-            </section>
+        <div className='menu_content mt-14'>
+          <section className='pl-6'>
+            <p>My Account</p>
+            <p>My Orders</p>
+            <p>My Claims</p>
+            <p>My Favorites</p>
+            <p>My Shopping Lists</p>
+          </section>
 
-            <section className='sidebar_payment my-4 pl-6 py-5'>
-              <p>Address Book</p>
-              <p>Account Information</p>
-              <p>Payment Information</p>
-            </section>
+          <section className='sidebar_payment my-4 pl-6 py-5'>
+            <p>Address Book</p>
+            <p>Account Information</p>
+            <p>Payment Information</p>
+          </section>
 
-            <section className='pl-6'>
-              <p>Company Profile</p>
-              <p>Company Structure</p>
-              <p>Company Users</p>
-              <p>Roles and Permissions</p>
-            </section>
+          <section className='pl-6'>
+            <p>Company Profile</p>
+            <p>Company Structure</p>
+            <p>Company Users</p>
+            <p>Roles and Permissions</p>
+          </section>
 
-            <section className='pl-6 py-2 sidebar_email mt-4'>
-              <p>Email Preferences</p>
-              <p>Catalog</p>
-            </section>
-          </div>
+          <section className='pl-6 py-2 sidebar_email mt-4'>
+            <p>Email Preferences</p>
+            <p>Catalog</p>
+          </section>
         </div>
-      )}
+      </div>
 
       <section className='text-sm flex my-6 items-center sm:w-8/12 sm:mx-auto justify-around'>
         <button onClick={openMenuHandler} className='sm:hidden cursor-pointer'>
